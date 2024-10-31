@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Lobster&family=Poppins:wght@400;500;700&family=Roboto:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bad Script", cursive;
+}
+body,html{
+    width: 100%;
+    height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+}
+.container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.container .diya{
+    width: 50%;
+    height: 100%;
+    background-color: #500505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .diya .lamp{
+    width: 300px;
+    height: 150px;
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+    background-color:#b11c1c;
+    position: relative;
+}
+.container .diya .lamp::before{
+    content:"";
+    width: 300px;
+    height: 40px;
+    background-color: #fdff60;
+    position: absolute;
+    border-radius: 50%;
+    transform: translateY(-20px);
+    border: 5px solid #9e0303;
+    box-sizing: border-box;
+}
+.container .diya .lamp:after{
+    content: "";
+    width: 30px;
+    height: 100px;
+    position: absolute;
+    background-color: #fff;
+    left: 50%;
+    top: -95px;
+    transform: translateX(-15px);
+    border-radius: 50%;
+    filter: blur(2px);
+    animation: animate 4s infinite linear;
+    box-shadow: 0 0 0 5px #eff000,
+                0 0 0 10px rgba(255, 255, 255, .2);
+    transform-origin: bottom;
+}
+@keyframes animate {
+    0%{
+        transform: translateX(-50%) scaleY(1);
+    }
+    50%{
+        transform: translateX(-50%) scaleY(1.2);
+    }
+    100%{
+        transform: translateX(-50%) scaleY(1);
+    }
+}
+.container .wishes{
+    width: 50%;
+    height: 100%;
+    background-color: #500505;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    color: #fff;
+}
+.container .wishes .happy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 500;
+}
+.container .wishes .diwali{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 500;
+}
+.container .wishes .happy span h1{
+    animation: namelight 2s infinite linear;
+    animation-delay: calc(var(--i)*0.1s);
+}
+.container .wishes .diwali span h1{
+    animation: namelight 2s infinite linear;
+    animation-delay: calc(var(--i)*0.1s);
+}
+@keyframes namelight {
+    0%{
+        color: #fff;
+        filter: blur(1px) hue-rotate(0deg);
+        text-shadow: 0 0 10px #00b3ff,
+        0 0 20px #00b3ff,
+        0 0 40px #00b3ff,
+        0 0 80px #00b3ff,
+        0 0 120px #00b3ff,
+        0 0 200px #00b3ff,
+        0 0 300px #00b3ff,
+        0 0 400px #00b3ff;
+    }
+
+    30%,70%{
+        color: #fff;
+        filter: blur(2px) hue-rotate(360deg);
+        text-shadow: 0 0 10px #00b3ff,
+        0 0 20px #00b3ff,
+        0 0 40px #00b3ff,
+        0 0 80px #00b3ff,
+        0 0 120px #00b3ff,
+        0 0 200px #00b3ff,
+        0 0 300px #00b3ff,
+        0 0 400px #00b3ff;
+    }
+    100%{
+        color: transparent;
+        box-shadow: none;
+        filter: blur(2px) hue-rotate(0deg);
+    }
+}
+.container  .firecracker{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    top: -200px;
+    /* background-color: #fff; */
+    left: 50px;
+    border-radius: 50%;
+}
+.container  .firecracker span{
+    width: 100%;
+    height: 80px;
+    /* background-color: #fdff60; */
+    display: inline-block;
+    position: absolute;
+    transform: rotate(calc(var(--j)*30deg));
+    overflow: hidden;
+}
+.container  .firecracker span:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 30px;
+    background: #00b3ff;
+    animation: fireanimate 2s infinite linear;
+    animation-delay: 0.8s;
+}
+.container  .firecracker2{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    top: -200px;
+    /* background-color: #fff; */
+    left: 50px;
+    border-radius: 50%;
+    transform: scale(2);
+}
+.container  .firecracker2 span{
+    width: 100%;
+    height: 80px;
+    /* background-color: #fdff60; */
+    display: inline-block;
+    position: absolute;
+    transform: rotate(calc(var(--j)*30deg));
+    overflow: hidden;
+}
+.container  .firecracker2 span:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 30px;
+    background: #00b3ff;
+    animation: fireanimate2 2s infinite linear;
+    animation-delay: 2s;
+}
+@keyframes fireanimate {
+    0%{
+        transform: translateY(0px);
+        filter: blur(1px) hue-rotate(0deg);
+    }
+    100%{
+        transform: translateY(-40px) scale(1);
+        filter: blur(2px) hue-rotate(360deg);
+    }
+}
+@keyframes fireanimate2 {
+    0%{
+        transform: translateY(0px);
+        filter: blur(1px) hue-rotate(0deg);
+    }
+    100%{
+        transform: translateY(-40px) scale(2);
+        filter: blur(2px) hue-rotate(180deg);
+    }
+}
+.container  .firecracker3{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    bottom: 20px;
+    /* background-color: #fff; */
+    left: 50px;
+    border-radius: 50%;
+    transform: scale(1.5);
+}
+.container  .firecracker3 span{
+    width: 100%;
+    height: 80px;
+    /* background-color: #fdff60; */
+    display: inline-block;
+    position: absolute;
+    transform: rotate(calc(var(--j)*30deg));
+    overflow: hidden;
+}
+.container  .firecracker3 span:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 30px;
+    background: #00b3ff;
+    animation: fireanimate3 2s infinite linear;
+    animation-delay: 3s;
+}
+@keyframes fireanimate3 {
+    0%{
+        transform: translateY(0px);
+        filter: blur(1px) hue-rotate(0deg);
+    }
+    100%{
+        transform: translateY(-40px) scale(1);
+        filter: blur(2px) hue-rotate(50deg);
+    }
+}
+@media screen and (max-width: 480px) {
+    .container{
+        flex-direction: column;
+        width: 100%;
+    }
+    .container .diya{
+        width: 100%;
+        height: 50vh;
+    }
+    .container .wishes{
+        width: 100%;
+        height: 50vh;
+    }
+    .container .wishes .diwali{
+        font-size: 16px;
+    }
+    .container .wishes .happy{
+        font-size: 16px;
+    }
+    body,html{
+        overflow: hidden;
+    }
+}
+
+
+
